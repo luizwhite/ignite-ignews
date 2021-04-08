@@ -6,7 +6,9 @@
 .pnp.js
 
 # testing
-/coverage
+coverage
+*.lcov
+lib-cov
 
 # next.js
 /.next/
@@ -30,5 +32,36 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# dotenv env files
+.env
+.env.test
+
 # vercel
 .vercel
+.now
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.yarn-integrity
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+

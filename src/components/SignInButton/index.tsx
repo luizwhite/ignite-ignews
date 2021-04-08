@@ -1,20 +1,28 @@
+import { signIn, signOut, useSession } from 'next-auth/client';
+import { useEffect } from 'react';
+import Spinner from 'react-loader-spinner';
+
 import { FaGithub } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 
-import { Container, Content } from './styles';
+import { Container } from './styles';
 import { rootColors } from '../../styles/globals';
 
 export const SignInButton: React.FC = () => {
-  const isUserLoggedIn = true;
+  const [session, loading] = useSession();
 
-  return isUserLoggedIn ? (
+  return loading ? (
     <Container>
+      <Spinner type="ThreeDots" color={rootColors.gray500} width={40} />
+    </Container>
+  ) : session ? (
+    <Container onClick={() => signOut()}>
       <FaGithub color={rootColors.green} />
-      Luiz Augusto
+      {session.user.name}
       <FiX size={30} color={rootColors.gray500} />
     </Container>
   ) : (
-    <Container>
+    <Container onClick={() => signIn('github')}>
       <FaGithub color={rootColors.yellow500} />
       Sign in with Github
     </Container>

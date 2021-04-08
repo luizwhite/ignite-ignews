@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+export interface AnchorProps {
+  $active?: boolean
+}
+
 export const Container = styled.header`
   height: 5rem;
   border-bottom: 1px solid var(--gray-800);
@@ -24,7 +28,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Anchor = styled.a<{ $active?: boolean }>`
+export const Anchor = styled.a<AnchorProps>`
   position: relative;
   display: inline-block;
   padding: 0 0.5rem;

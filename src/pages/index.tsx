@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 
-import Home, { HomeProps } from '../pages-lib/home';
-import { stripe } from '../services/stripe';
+import Home, { HomeProps } from 'pages-lib/home';
+import { stripe } from 'services/stripe';
 
 const App: React.FC<HomeProps> = ({ product }) => <Home {...{ product }} />;
 

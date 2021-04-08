@@ -7,6 +7,7 @@ export const Container = styled.button.attrs({
   align-items: center;
   justify-content: center;
   height: 3rem;
+  min-width: 220px;
   padding: 0 1.5rem;
 
   border-radius: 3rem;
@@ -20,9 +21,18 @@ export const Container = styled.button.attrs({
     filter: brightness(0.7);
   }
 
+  > div {
+    font-size: 0;
+    margin-right: auto;
+
+    svg:first-child, svg:nth-child(2) {
+      margin: 0;
+    }
+  }
+
   svg {
     width: 20px;
-    aspect-ratio: 1;
+    height: 20px;
 
     &:first-child {
       margin-right: 1rem;

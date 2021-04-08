@@ -7,7 +7,7 @@ export const rootColors = {
   cyan500: '#61dafb',
   green: '#04d361',
   gray500: '#737380',
-}
+};
 
 export default styled.createGlobalStyle`
   :root {
@@ -18,6 +18,7 @@ export default styled.createGlobalStyle`
     --gray-100: #e1e1e6;
     --gray-300: #a8a8b3;
     --gray-500: ${rootColors.gray500};
+    --gray-700: #323238;
     --gray-800: #29292a;
     --gray-850: #1f2729;
     --gray-900: #121214;
@@ -31,6 +32,10 @@ export default styled.createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  html {
+    margin-left: calc(100vw - 100%);
   }
 
   @media (max-width: 1080px) {
@@ -70,13 +75,10 @@ export default styled.createGlobalStyle`
     font-weight: 500;
   }
 
+  a,
   button {
     cursor: pointer;
     border: none;
-  }
-
-  strong {
-    display: block;
   }
 
   input {
